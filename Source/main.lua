@@ -24,7 +24,7 @@
 --  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 --  SOFTWARE.
 --
- 
+
 import "CoreLibs/utilities/where"
 import "CoreLibs/timer"
 
@@ -44,11 +44,11 @@ function setup()
 
     player = modplayer.player.new()
     assert(player)
-    
+
     player:load(module)
     player:play()
 
-    setup_is_done = true    
+    setup_is_done = true
 end
 
 function playdate.update()
