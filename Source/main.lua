@@ -29,7 +29,6 @@ import "CoreLibs/utilities/where"
 import "CoreLibs/timer"
 
 local gfx = playdate.graphics
-local snd = playdate.sound
 
 local setup_is_done = false
 local module = nil
