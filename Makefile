@@ -78,9 +78,6 @@ build: clean compile run
 
 run: open
 
-clean:
-	rm -rf '$(GAME).pdx'
-
 compile: Source/main.lua
 	"$(SDKBIN)/pdc" 'Source' '$(GAME).pdx'
 	
