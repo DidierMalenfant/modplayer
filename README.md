@@ -2,7 +2,7 @@
 
 An Amiga Soundtracker/Protracker player, based off [lmp](https://github.com/evansm7/lmp), for the [Playdate SDK](https://play.date/dev/).
 
-v0.1-alpha May 10th 2022
+v0.2-alpha May 11th 2022
 
 
 ## Usage
