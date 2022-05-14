@@ -25,7 +25,6 @@
 --  SOFTWARE.
 --
 
-import "CoreLibs/utilities/where"
 import "CoreLibs/timer"
 
 local gfx = playdate.graphics
