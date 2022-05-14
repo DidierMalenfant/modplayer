@@ -41,22 +41,23 @@ SIM=Playdate Simulator
 include modplayer/modplayer.mk
 include extension/extension.mk	  
 
-# List user asm files
+# -- List user asm files
 UASRC = 
 
-# List all user C define here, like -D_DEBUG=1
+# -- List all user C define here, like -D_DEBUG=1
 UDEFS = 
 
-# Define ASM defines here
+# -- Define ASM defines here
 UADEFS = 
 
-# List the user directory to look for the libraries here
+# -- List the user directory to look for the libraries here
 ULIBDIR =
 
-# List all user libraries here
+# -- List all user libraries here
 ULIBS =
 
+# -- Include the common build rules
 include $(SDK)/C_API/buildsupport/common.mk
 
-# Make sure we compile a universal binary for M1 macs
+# -- Make sure we compile a universal binary for the Simulator (Intel + Apple Silicon)
 DYLIB_FLAGS += -arch x86_64 -arch arm64
