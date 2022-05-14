@@ -60,4 +60,5 @@ ULIBS =
 include $(SDK)/C_API/buildsupport/common.mk
 
 # -- Make sure we compile a universal binary for the Simulator (Intel + Apple Silicon)
+SYM_CPFLAGS += -arch x86_64 -arch arm64     # -- This is currently only used in my custom common.mk
 DYLIB_FLAGS += -arch x86_64 -arch arm64
