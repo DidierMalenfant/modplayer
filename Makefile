@@ -25,11 +25,6 @@
 #  SOFTWARE.
 #
  
-.PHONY: clean
-.PHONY: build
-.PHONY: run
-.PHONY: copy
-
 HEAP_SIZE      = 8388208
 STACK_SIZE     = 61800
 
@@ -73,13 +68,3 @@ include $(SDK)/C_API/buildsupport/common.mk
 
 # Make sure we compile a universal binary for M1 macs
 DYLIB_FLAGS += -arch x86_64 -arch arm64
-
-build: clean compile run
-
-run: open
-
-compile: Source/main.lua
-	"$(SDKBIN)/pdc" 'Source' '$(GAME).pdx'
-	
-open:
-	open -a '$(SDKBIN)/$(SIM).app/Contents/MacOS/$(SIM)' '$(GAME).pdx'
