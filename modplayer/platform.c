@@ -31,7 +31,11 @@
 
 void* pd_calloc(size_t nb_of_items, size_t item_size)
 {
-    size_t size = nb_of_items * item_size; // -- TODO: This should check for overflow.
+    if (item_size && (nb_of_items > (SIZE_MAX / item_size))) {
+        return NULL;
+    }
+
+    size_t size = nb_of_items * item_size;
     void* memory = PD_ALLOC(size);
     if(memory != NULL) {
         memset(memory, 0, size);
