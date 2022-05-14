@@ -35,8 +35,8 @@
 // -- Module class
 
 #define CLASSNAME_MODULE                "modplayer.module"
-#define MODULE_BUFFER_SIZE_IN_SAMPLES   4096*32
-#define NEW_CHUNK_SIZE_IN_SAMPLES       MODULE_BUFFER_SIZE_IN_SAMPLES / 32
+#define NEW_CHUNK_SIZE_IN_SAMPLES       4096
+#define MODULE_BUFFER_SIZE_IN_SAMPLES   NEW_CHUNK_SIZE_IN_SAMPLES*16
 
 typedef struct {
     uint8_t* module_data;
