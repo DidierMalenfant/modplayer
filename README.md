@@ -7,13 +7,11 @@ v0.2-alpha May 11th 2022
 
 ## Usage
 
-You will need to add C extensions to your Playdate project. You can take a look at the Makefile provided in the sample code for inspiration if your project doesn't already use a mixture of C and Lua. The file `$(SDK_DIR)/C_API/buildsupport/common.mk` pretty much does all the heavy lifting there.
+If you're already using C extensions in your project and you're also using the rules in `$(SDK_DIR)/C_API/buildsupport/common.mk` to build it, then adding this library is very easy. Just include `include modplayer/modplayer.mk` in your makefile and then call `registerModPlayer()` (declared in `modplayer/modplayer.h`) during Lua's initialisation (responding to a `kEventInitLua` event for example).
 
-You then need to add `modplayer/modplayer.c`, `modplayer/platform.c` and `modplayer/lmp/littlemodplayer.c` to your list of source Files (`SRC` variable if you're using `common.mk`). If you already have C extensions in your project, you will need to add a call to `registerModPlayer()` during Lua's initialisation (responding to a `kEventInitLua` event for example). Finally you'll also need to add the `modplayer` folder to your VPATH and include dir paths.
+If you currently only have a pure Lua project, you will need to add a `Makefile` to it and some code to add the extensions. The `Makefile` used to build the demo project and the `extension` folder provided are both a very good places to start.
 
-If you don't already have C extensions, you will also need to add `extension/main.c` to your source files and the `extension` folder to your VPATH and include dir paths.
-
-modplayer should then be available to you in your Lua project.
+`modplayer` should then be available in your Lua project.
 
 The overall paradigm is:
 

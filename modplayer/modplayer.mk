@@ -24,39 +24,18 @@
 #  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 #  SOFTWARE.
 #
- 
-HEAP_SIZE      = 8388208
-STACK_SIZE     = 61800
 
-PRODUCT = modplayerdemo.pdx
+# -- Find out more about where this file is relative to the Makefile including it
+RELATIVE_FILE_PATH := $(lastword $(MAKEFILE_LIST))
+RELATIVE_DIR := $(subst /$(notdir $(RELATIVE_FILE_PATH)),,$(RELATIVE_FILE_PATH))
+RELATIVE_PARENT_DIR := $(subst /$(notdir $(RELATIVE_DIR)),,$(RELATIVE_DIR))
 
-# -- Locate the SDK
-SDK = $(shell egrep '^\s*SDKRoot' ~/.Playdate/config | head -n 1 | cut -c9-)
-SDKBIN = $(SDK)/bin
+# -- Add us as an include search folder only if it's not already there
+uniq = $(if $1,$(firstword $1) $(call uniq,$(filter-out $(firstword $1),$1)))
+UINCDIR := $(call uniq, $(UINCDIR) $(RELATIVE_PARENT_DIR))
 
-GAME=$(notdir $(CURDIR))
-SIM=Playdate Simulator
-
-# -- Add our extensions and libraries
-include modplayer/modplayer.mk
-include extension/extension.mk	  
-
-# List user asm files
-UASRC = 
-
-# List all user C define here, like -D_DEBUG=1
-UDEFS = 
-
-# Define ASM defines here
-UADEFS = 
-
-# List the user directory to look for the libraries here
-ULIBDIR =
-
-# List all user libraries here
-ULIBS =
-
-include $(SDK)/C_API/buildsupport/common.mk
-
-# Make sure we compile a universal binary for M1 macs
-DYLIB_FLAGS += -arch x86_64 -arch arm64
+# -- Add our source files
+SRC := $(SRC) \
+	   $(RELATIVE_DIR)/modplayer.c \
+	   $(RELATIVE_DIR)/platform.c \
+	   $(RELATIVE_DIR)/lmp/littlemodplayer.c
