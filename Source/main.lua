@@ -25,6 +25,8 @@
 --  SOFTWARE.
 --
 
+import 'CoreLibs/graphics'
+import "CoreLibs/string"
 import "CoreLibs/strict"
 
 local gfx = playdate.graphics
@@ -36,6 +38,8 @@ local player = nil
 function setup()
     print('Setting up...')
     gfx.setColor(gfx.kColorWhite)
+
+    gfx.setFont(gfx.getSystemFont())
 
     module = modplayer.module.new('Sounds/Crystal_Hammer.mod')
     assert(module)
@@ -56,6 +60,18 @@ function playdate.update()
 
     gfx.fillRect(0, 0, 400, 240)
     playdate.drawFPS(0,0)
+
+    local stats = playdate.getStats()
+    if (stats) then
+        gfx.drawText(string.format("*Kernel %2.2f*", stats["kernel"]), 1, 1)
+        gfx.drawText(string.format("*Game %2.2f*", stats["game"]), 1, 21)
+        gfx.drawText(string.format("*Audio %2.2f*", stats["audio"]), 1, 41)
+    else
+        gfx.drawText("*Kernel XXX*", 1, 1)
+        gfx.drawText("*Game XXX*", 1, 21)
+        gfx.drawText("*Audio XXX*", 1, 41)
+    end
+
 
     player:update()
 end
