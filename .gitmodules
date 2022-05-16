@@ -1,0 +1,3 @@
+[submodule "modplayer/pdutility"]
+	path = modplayer/pdutility
+	url = https://DidierMalenfant@github.com/DidierMalenfant/pdutility.git

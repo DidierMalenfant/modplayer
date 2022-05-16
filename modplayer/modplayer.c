@@ -26,9 +26,8 @@
  */
 
 #include "modplayer/modplayer.h"
-#include "modplayer/platform.h"
-
 #include "modplayer/lmp/littlemodplayer.h"
+#include "pdutility/platform.h"
 
 #include <stdbool.h> 
 
