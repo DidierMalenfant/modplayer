@@ -35,7 +35,7 @@ local player = nil
 
 function setup()
     print('Setting up...')
-    gfx.setColor(gfx.kColorBlack)
+    gfx.setColor(gfx.kColorWhite)
 
     module = modplayer.module.new('Sounds/Crystal_Hammer.mod')
     assert(module)
