@@ -36,7 +36,6 @@ local module = nil
 local player = nil
 
 function setup()
-    print('Setting up...')
     gfx.setColor(gfx.kColorWhite)
 
     gfx.setFont(gfx.getSystemFont())
