@@ -73,6 +73,5 @@ function playdate.update()
         gfx.drawText("*Audio XXX*", 1, 41)
     end
 
-
     player:update()
 end
