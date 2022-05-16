@@ -26,7 +26,7 @@
  */
  
 #include "pd_api.h"
-#include "modplayer.h"
+#include "modplayer/modplayer.h"
 
 PlaydateAPI* pd = NULL;
 

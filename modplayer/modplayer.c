@@ -25,10 +25,10 @@
  *  SOFTWARE.
  */
 
-#include "modplayer.h"
-#include "platform.h"
+#include "modplayer/modplayer.h"
+#include "modplayer/platform.h"
 
-#include "lmp/littlemodplayer.h"
+#include "modplayer/lmp/littlemodplayer.h"
 
 #include <stdbool.h> 
 

@@ -25,7 +25,7 @@
  *  SOFTWARE.
  */
  
-#include "platform.h"
+#include "modplayer/platform.h"
 
 // -- Utility functions
 
