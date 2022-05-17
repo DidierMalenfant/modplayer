@@ -25,16 +25,15 @@
  *  SOFTWARE.
  */
  
-#include "pd_api.h"
 #include "modplayer/modplayer.h"
+#include "pdutility/platform.h"
 
-PlaydateAPI* pd = NULL;
+#include "pd_api.h"
 
 int eventHandler(PlaydateAPI* playdate, PDSystemEvent event, uint32_t arg)
 {
     if(event == kEventInitLua) {
-        pd = playdate;
-        
+        pd_init(playdate);
         registerModPlayer();
     }
     
