@@ -25,7 +25,11 @@
 #  SOFTWARE.
 #
 
-ifndef NET_MALENFANT_MODPLAYER_PD
+ifndef NET_MALENFANT_MODPLAYER_PD	
+	# -- We need to make sure this library won't be included twice in a project
+	# -- This could happen if the project uses tow libraries which use this one
+	NET_MALENFANT_MODPLAYER_PD := 1
+
 	# -- Find out more about where this file is relative to the Makefile including it
 	RELATIVE_FILE_PATH := $(lastword $(MAKEFILE_LIST))
 	RELATIVE_DIR := $(subst /$(notdir $(RELATIVE_FILE_PATH)),,$(RELATIVE_FILE_PATH))
@@ -42,8 +46,4 @@ ifndef NET_MALENFANT_MODPLAYER_PD
 	
 	# -- Add the utility library
 	include $(RELATIVE_DIR)/pdutility/pdutility.mk
-	
-	# -- We need to make sure this library won't be included twice in a project
-	# -- This could happen if the project uses tow libraries which use this one
-	NET_MALENFANT_MODPLAYER_PD := 1
 endif
