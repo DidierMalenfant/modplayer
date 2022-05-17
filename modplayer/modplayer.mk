@@ -37,8 +37,8 @@ ifndef NET_MALENFANT_MODPLAYER_PD
 	
 	# -- Add our source files
 	SRC := $(SRC) \
-	   	$(RELATIVE_DIR)/modplayer.c \
-	   	$(RELATIVE_DIR)/lmp/littlemodplayer.c
+	   	   $(RELATIVE_DIR)/modplayer.c \
+	   	   $(RELATIVE_DIR)/lmp/littlemodplayer.c
 	
 	# -- Add the utility library
 	include $(RELATIVE_DIR)/pdutility/pdutility.mk
