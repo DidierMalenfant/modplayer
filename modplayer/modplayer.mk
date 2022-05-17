@@ -39,6 +39,10 @@ ifndef NET_MALENFANT_MODPLAYER_PD
 	uniq = $(if $1,$(firstword $1) $(call uniq,$(filter-out $(firstword $1),$1)))
 	UINCDIR := $(call uniq, $(UINCDIR) $(RELATIVE_PARENT_DIR))
 	
+	# -- This is our current version number
+	MODPLAYER_VERSION := 0002
+	UDEFS := $(UDEFS) -DMODPLAYER_VERSION=$(MODPLAYER_VERSION)
+	
 	# -- Add our source files
 	SRC := $(SRC) \
 	   	   $(RELATIVE_DIR)/modplayer.c \
