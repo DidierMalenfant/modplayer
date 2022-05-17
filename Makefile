@@ -37,10 +37,6 @@ SDKBIN = $(SDK)/bin
 GAME=$(notdir $(CURDIR))
 SIM=Playdate Simulator
 
-# -- Add our extensions and libraries
-include modplayer/modplayer.mk
-include extension/extension.mk	  
-
 # -- List user asm files
 UASRC = 
 
@@ -55,6 +51,10 @@ ULIBDIR =
 
 # -- List all user libraries here
 ULIBS =
+
+# -- Add our extensions and libraries
+include modplayer/modplayer.mk
+include extension/extension.mk	  
 
 # -- Include the common build rules
 include $(SDK)/C_API/buildsupport/common.mk
