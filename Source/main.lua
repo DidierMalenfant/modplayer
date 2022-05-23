@@ -35,7 +35,7 @@ local setup_is_done = false
 local module = nil
 local player = nil
 
-function setup()
+local function setup()
     gfx.setColor(gfx.kColorWhite)
 
     gfx.setFont(gfx.getSystemFont())
