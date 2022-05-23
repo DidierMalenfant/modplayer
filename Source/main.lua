@@ -29,7 +29,7 @@ import 'CoreLibs/graphics'
 import "CoreLibs/string"
 import "CoreLibs/strict"
 
-local gfx = playdate.graphics
+local gfx <const> = playdate.graphics
 
 local setup_is_done = false
 local module = nil
