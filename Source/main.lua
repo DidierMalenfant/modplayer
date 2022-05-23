@@ -63,13 +63,18 @@ function playdate.update()
 
     local stats = playdate.getStats()
     if (stats) then
-        gfx.drawText(string.format("*Kernel %2.2f*", stats["kernel"]), 1, 1)
-        gfx.drawText(string.format("*Game %2.2f*", stats["game"]), 1, 21)
-        gfx.drawText(string.format("*Audio %2.2f*", stats["audio"]), 1, 41)
-    else
-        gfx.drawText("*Kernel XXX*", 1, 1)
-        gfx.drawText("*Game XXX*", 1, 21)
-        gfx.drawText("*Audio XXX*", 1, 41)
+        local game_stats = stats["game"]
+        if game_stats then
+            gfx.drawText(string.format("*Game %2.2f*", game_stats), 1, 1)
+        end
+        local audio_stats = stats["audio"]
+        if game_stats then
+            gfx.drawText(string.format("*Audio %2.2f*", audio_stats), 1, 21)
+        end
+        local kernel_stats = stats["kernel"]
+        if kernel_stats then
+            gfx.drawText(string.format("*Kernel %2.2f*", kernel_stats), 1, 41)
+        end
     end
 
     player:update()
