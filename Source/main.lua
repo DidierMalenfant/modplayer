@@ -58,9 +58,9 @@ function playdate.update()
     end
 
     gfx.fillRect(0, 0, 400, 240)
-    
+
     playdate.drawFPS(385,0)
-    
+
     local stats = playdate.getStats()
     if (stats) then
         gfx.drawText(string.format("*Kernel %2.2f*", stats["kernel"]), 1, 1)
