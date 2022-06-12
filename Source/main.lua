@@ -26,7 +26,6 @@
 --
 
 import 'CoreLibs/graphics'
-import "CoreLibs/string"
 import "CoreLibs/strict"
 
 local gfx <const> = playdate.graphics
