@@ -39,5 +39,5 @@ UDEFS := $(UDEFS) -DMODPLAYER_VERSION=$(MODPLAYER_VERSION)
 
 # -- Add our source files
 SRC := $(SRC) \
-   	   $(_RELATIVE_DIR)/modplayer/modplayer.c \
-   	   $(_RELATIVE_DIR)/modplayer/lmp/littlemodplayer.c
+   	 $(_RELATIVE_DIR)/modplayer/modplayer.c \
+   	 $(_RELATIVE_DIR)/modplayer/lmp/littlemodplayer.c

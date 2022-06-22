@@ -27,7 +27,8 @@
 
 #include "modplayer/modplayer.h"
 #include "modplayer/lmp/littlemodplayer.h"
-#include "pdutility/platform.h"
+
+#include "pdutility/pdutility.h"
 
 #include <stdbool.h> 
 
@@ -353,7 +354,7 @@ static const lua_reg player_class[] = {
 
 // -- Register our classes with Lua
 
-void registerModPlayer(void)
+void register_modplayer(PlaydateAPI* pd)
 {
     const char* err = NULL;
 

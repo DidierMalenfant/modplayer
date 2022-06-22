@@ -28,6 +28,8 @@
 #ifndef MODPLAYER_H
 #define MODPLAYER_H
 
-extern void registerModPlayer(void);
+#include "pd_api.h"
+
+extern void register_modplayer(PlaydateAPI*);
 
 #endif
