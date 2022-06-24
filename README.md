@@ -22,14 +22,14 @@ The overall paradigm is:
 Rough example:
 
 ~~~
-	module = modplayer.module.new('Sounds/Crystal_Hammer.mod')
-	assert(module)
+    module = modplayer.module.new('Sounds/Crystal_Hammer.mod')
+    assert(module)
 
-	player = modplayer.player.new()
-	assert(player)
-	
-	player:load(module)
-	player:play()
+    player = modplayer.player.new()
+    assert(player)
+    
+    player:load(module)
+    player:play()
 ~~~
 
 Then make sure that you call `player:update()` in your `playdate.update()` method.
